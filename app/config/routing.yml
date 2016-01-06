@@ -1,0 +1,7 @@
+cute_ninja_hot_user:
+    resource: "@CuteNinjaHOTUserBundle/Resources/config/routing.yml"
+    prefix:   /api
+    type: rest
+
+api_login_check:
+    path: /api/login_check

@@ -1,3 +1,4 @@
 cute_ninja_memoria:
     additional_entity_managers: ~
     fixtures:
+        - { resource: src/CuteNinja/HOT/UserBundle/Resources/fixtures/User.yml }
