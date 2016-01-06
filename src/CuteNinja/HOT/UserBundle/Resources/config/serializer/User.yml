@@ -1,0 +1,29 @@
+CuteNinja\HOT\UserBundle\Entity\User:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [common]
+
+        username:
+            expose: true
+            groups: [common]
+
+        email:
+            expose: false
+
+        status:
+            expose: false
+
+        createdAt:
+            expose: true
+            groups: [common]
+
+        updatedAt:
+            expose: false
+
+        password:
+            expose: false
+
+        roles:
+            expose: false

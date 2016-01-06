@@ -1,0 +1,30 @@
+cute_ninja_hot_api_user_list:
+    path: /users
+    defaults: { _controller: CuteNinjaHOTUserBundle:User:list }
+    methods: [GET]
+
+cute_ninja_hot_api_user_get:
+    path: /users/{id}
+    defaults: { _controller: CuteNinjaHOTUserBundle:User:get }
+    methods: [GET]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_user_post:
+    path: /users
+    defaults: { _controller: CuteNinjaHOTUserBundle:User:post }
+    methods: [POST]
+
+cute_ninja_hot_api_user_put:
+    path: /users/{id}
+    defaults: { _controller: CuteNinjaHOTUserBundle:User:put }
+    methods: [PUT]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_user_delete:
+    path: /users/{id}
+    defaults: { _controller: CuteNinjaHOTUserBundle:User:delete }
+    methods: [DELETE]
+    requirements:
+        id: \d+

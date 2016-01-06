@@ -1,0 +1,2 @@
+cute_ninja_hot_api_user:
+    resource: "@CuteNinjaHOTUserBundle/Resources/config/routing/User.yml"

@@ -1,0 +1,14 @@
+CuteNinja\HOT\UserBundle\Entity\User:
+    type: entity
+    repositoryClass: CuteNinja\HOT\UserBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            generator:
+                strategy: IDENTITY
