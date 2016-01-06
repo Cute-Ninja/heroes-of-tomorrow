@@ -1,0 +1,30 @@
+php_value short_open_tag 0
+php_value register_globals 0
+php_value magic_quotes_gpc 0
+php_value extension php_intl.dll
+php_value intl.default_locale fr_utf8
+php_value intl.error_level E_WARNING
+php_value date.timezone Europe/Paris
+php_value max_execution_time 300
+php_value session.gc_probability 0
+php_value apc.slam_defense 0
+php_value max_file_uploads 1000
+php_value memory_limit 2048M
+php_value post_max_size 100M
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+<IfModule mod_rewrite.c>
+
+    RewriteEngine On
+
+    RewriteCond %{HTTP:Authorization} ^(.*)
+    RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !\.(js|css|gif|ico|jpg|jpeg|js|png|swf|txt)$
+    RewriteRule ^(.*)$ %{ENV:DIRECTORY_INDEX} [QSA,L]
+
+</IfModule>

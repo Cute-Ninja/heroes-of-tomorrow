@@ -1,0 +1,29 @@
+fos_rest:
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener:
+        rules:
+            - { path: '^/api', priorities: ['json'], fallback_format: json, prefer_extension: false }
+            - { path: ^/, priorities: [ html, json, xml ], fallback_format: ~, prefer_extension: true }
+    body_converter:
+        enabled: true
+        validate: true
+    routing_loader:
+        default_format: json
+        include_format: false
+    view:
+        view_response_listener: 'force'
+        formats:
+            json : true
+        templating_formats:
+            html: true
+        failed_validation: HTTP_BAD_REQUEST
+        default_engine: twig
+    allowed_methods_listener: true
+    access_denied_listener:
+        json: true
+    service:
+        serializer: jms_serializer.serializer
+    serializer:
+        version: ~
+        groups: []

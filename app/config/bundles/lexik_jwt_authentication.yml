@@ -1,0 +1,6 @@
+lexik_jwt_authentication:
+    private_key_path:    %kernel.root_dir%/../app/config/jwt/private.pem
+    public_key_path:     %kernel.root_dir%/../app/config/jwt/public.pem
+    token_ttl:           18408600
+    pass_phrase:         %jwt_key_pass_phrase%
+    user_identity_field: %jwt_user_identity_field%
