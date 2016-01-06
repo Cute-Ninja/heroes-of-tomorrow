@@ -1,0 +1,25 @@
+language: php
+
+php:
+    - 5.5
+
+install:
+    - openssl genrsa -out app/config/jwt/private.pem -aes256 -passout pass:passphrase 4096
+    - openssl rsa -pubout -in app/config/jwt/private.pem -out app/config/jwt/public.pem -passin pass:passphrase
+    - composer config github-oauth.github.com $github
+    - composer self-update && composer --version
+    - composer install --no-progress --no-interaction --prefer-dist
+
+before_script:
+    - echo 'date.timezone = "Europe/Paris"' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
+    - cp app/config/parameters.yml.dist app/config/parameters.yml
+    - php bin/console doctrine:database:create --env=test
+
+script:
+    - bin/phpunit --coverage-clover coverage.clover
+    - bin/behat
+
+after_script:
+    - vendor/bin/test-reporter
+    - wget https://scrutinizer-ci.com/ocular.phar
+    - php ocular.phar code-coverage:upload --format=php-clover coverage.clover

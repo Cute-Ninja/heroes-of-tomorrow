@@ -1,0 +1,6 @@
+default:
+    extensions:
+        Behat\Symfony2Extension: ~
+    autoload:
+        '': app/features/boostrap/
+    suites:
