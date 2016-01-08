@@ -1,0 +1,3 @@
+cute_ninja_hot_character_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Default:index }

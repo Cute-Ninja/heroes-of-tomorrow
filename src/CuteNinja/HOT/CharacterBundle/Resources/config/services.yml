@@ -1,0 +1,4 @@
+services:
+#    cute_ninja_hot_character.example:
+#        class: CuteNinja\HOT\CharacterBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
