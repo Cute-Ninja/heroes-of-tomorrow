@@ -3,6 +3,7 @@
 namespace CuteNinja\HOT\UserBundle\Repository;
 
 use CuteNinja\PersonaBundle\Repository\UserRepository as PersonaUserRepository;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * Class UserRepository
@@ -12,7 +13,7 @@ use CuteNinja\PersonaBundle\Repository\UserRepository as PersonaUserRepository;
 class UserRepository extends PersonaUserRepository
 {
     /**
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return QueryBuilder
      */
     public function getForListActionQueryBuilder()
     {

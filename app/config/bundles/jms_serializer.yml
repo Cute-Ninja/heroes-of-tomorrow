@@ -9,5 +9,8 @@ jms_serializer:
             UserBundle:
                 namespace_prefix: "CuteNinja\\HOT\\UserBundle\\Entity"
                 path: "@CuteNinjaHOTUserBundle/Resources/config/serializer"
+            CharacterBundle:
+                namespace_prefix: "CuteNinja\\HOT\\CharacterBundle\\Entity"
+                path: "@CuteNinjaHOTCharacterBundle/Resources/config/serializer"
 
 

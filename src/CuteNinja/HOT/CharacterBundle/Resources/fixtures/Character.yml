@@ -1,0 +1,8 @@
+CuteNinja\HOT\CharacterBundle\Entity\Character:
+    cernunnos:
+        name: oGN - Cernunnos
+        user: @ghriim
+
+    character {2..100}:
+        name: <username()>
+        user: @user_<current()>

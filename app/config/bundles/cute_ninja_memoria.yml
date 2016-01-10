@@ -2,3 +2,4 @@ cute_ninja_memoria:
     additional_entity_managers: ~
     fixtures:
         - { resource: src/CuteNinja/HOT/UserBundle/Resources/fixtures/User.yml }
+        - { resource: src/CuteNinja/HOT/CharacterBundle/Resources/fixtures/Character.yml }

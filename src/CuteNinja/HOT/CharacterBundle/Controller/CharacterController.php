@@ -2,6 +2,7 @@
 
 namespace CuteNinja\HOT\CharacterBundle\Controller;
 
+use CuteNinja\HOT\CharacterBundle\Repository\CharacterRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +24,18 @@ class CharacterController extends APIBaseController
      */
     public function listAction(Request $request)
     {
-        return $this->getServerErrorResponseBuilder()->notImplemented();
+        /** @var CharacterRepository $characterRepository */
+        $characterRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTCharacterBundle:Character');
+
+        $serializationContexts = ['common'];
+        $query = $characterRepository->getForListActionQueryBuilder();
+
+        $page = $this->getPageForPagination($request);
+        $limit = $this->getLimitForPagination($request);
+
+        $paginator = $this->getPaginator()->paginate($query, $page, $limit);
+
+        return $this->getSuccessResponseBuilder()->buildMultiObjectResponse($paginator, $request, $this->getRouter(), $serializationContexts);
     }
 
     /**
@@ -44,7 +56,11 @@ class CharacterController extends APIBaseController
      */
     public function getAction(Request $request, $id)
     {
-        return $this->getServerErrorResponseBuilder()->notImplemented();
+        $character = $this->getDoctrine()->getRepository('CuteNinjaHOTCharacterBundle:Character')->find($id);
+
+        $serializationContexts = ['common'];
+
+        return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($character, $serializationContexts);
     }
 
     /**

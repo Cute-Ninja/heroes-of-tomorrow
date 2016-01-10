@@ -1,0 +1,14 @@
+CuteNinja\HOT\CharacterBundle\Entity\Character:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [common]
+
+        name:
+            expose: true
+            groups: [common]
+
+        user:
+            expose: true
+            groups: [common]

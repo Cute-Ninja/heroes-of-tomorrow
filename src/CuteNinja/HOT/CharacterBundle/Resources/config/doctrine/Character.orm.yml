@@ -1,0 +1,35 @@
+CuteNinja\HOT\CharacterBundle\Entity\Character:
+    type: entity
+    table: "`user`"
+    repositoryClass: CuteNinja\HOT\CharacterBundle\Repository\CharacterRepository
+    id:
+        id:
+            type: integer
+            scale: 0
+            length: null
+            unique: false
+            nullable: false
+            precision: 0
+            id: true
+            generator:
+                strategy: IDENTITY
+
+    fields:
+        name:
+            column: name
+            type: string
+            length: 50
+            unique: true
+            nullable: false
+
+    oneToOne:
+        user:
+            targetEntity: CuteNinja\HOT\UserBundle\Entity\User
+            cascade: {}
+            fetch: LAZY
+            mappedBy: null
+            joinColumns:
+                user_id:
+                    referencedColumnName: id
+                    nullable: true
+            orphanRemoval: true

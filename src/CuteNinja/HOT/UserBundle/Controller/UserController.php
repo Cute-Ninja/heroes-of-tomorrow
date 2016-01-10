@@ -61,7 +61,6 @@ class UserController extends APIBaseController
         $serializationContexts = ['common'];
 
         return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($user, $serializationContexts);
-
     }
 
     /**
@@ -80,7 +79,7 @@ class UserController extends APIBaseController
     /**
      * {@inheritdoc}
      *
-     * ApiDoc(
+     * @ApiDoc(
      *      section="User",
      *      description="NOT IMPLEMENTED",
      *      requirements={

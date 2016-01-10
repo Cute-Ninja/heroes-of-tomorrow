@@ -5,3 +5,8 @@ CuteNinja\HOT\UserBundle\Entity\User:
     ghriim (extends base_user):
         username: Ghriim
         email: ghriim@fakemail.com
+
+    user_{2..100} (extends base_user):
+        username: <username()>
+        email: <email()>
+

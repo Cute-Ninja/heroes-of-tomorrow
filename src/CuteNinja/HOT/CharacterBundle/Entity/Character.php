@@ -18,9 +18,9 @@ class Character extends BaseEntity
     protected $id;
 
     /**
-     * @var string $username
+     * @var string $name
      */
-    protected $username;
+    protected $name;
 
     /**
      * @var User $user
@@ -50,19 +50,19 @@ class Character extends BaseEntity
     /**
      * @return string
      */
-    public function getUsername()
+    public function getName()
     {
-        return $this->username;
+        return $this->name;
     }
 
     /**
-     * @param string $username
+     * @param string $name
      *
      * @return $this
      */
-    public function setUsername($username)
+    public function setName($name)
     {
-        $this->username = $username;
+        $this->name = $name;
 
         return $this;
     }
