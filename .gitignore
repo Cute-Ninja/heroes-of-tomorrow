@@ -1,6 +1,8 @@
 /.idea/
 .php_cs.cache
 /app/config/parameters.yml
+/app/config/jwt/.gitkeep
+/app/config/jwt/*
 /behat.yml
 bin/*
 !bin/console
