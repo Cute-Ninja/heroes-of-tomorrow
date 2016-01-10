@@ -1,0 +1,30 @@
+cute_ninja_hot_api_character_list:
+    path: /characters
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Character:list }
+    methods: [GET]
+
+cute_ninja_hot_api_character_get:
+    path: /characters/{id}
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Character:get }
+    methods: [GET]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_character_post:
+    path: /characters
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Character:post }
+    methods: [POST]
+
+cute_ninja_hot_api_character_put:
+    path: /characters/{id}
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Character:put }
+    methods: [PUT]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_character_delete:
+    path: /characters/{id}
+    defaults: { _controller: CuteNinjaHOTCharacterBundle:Character:delete }
+    methods: [DELETE]
+    requirements:
+        id: \d+

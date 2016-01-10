@@ -1,3 +1,2 @@
-cute_ninja_hot_character_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: CuteNinjaHOTCharacterBundle:Default:index }
+cute_ninja_hot_api_character:
+    resource: "@CuteNinjaHOTCharacterBundle/Resources/config/routing/Character.yml"
