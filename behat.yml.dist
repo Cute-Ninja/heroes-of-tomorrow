@@ -4,3 +4,8 @@ default:
     autoload:
         '': app/features/boostrap/
     suites:
+        Character:
+            paths:
+                - %paths.base%/src/CuteNinja/HOT/CharacterBundle/Tests/Features/Character
+            contexts:
+                - CuteNinja\HOT\CharacterBundle\Tests\Context\CharacterContext
