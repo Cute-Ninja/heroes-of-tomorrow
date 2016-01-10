@@ -2,8 +2,8 @@
 
 namespace CuteNinja\HOT\CharacterBundle\Controller;
 
-use CuteNinja\HOT\UserBundle\Repository\UserRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
+use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -15,6 +15,11 @@ class CharacterController extends APIBaseController
 {
     /**
      * {@inheritdoc}
+     *
+     * @ApiDoc(
+     *      section="Character",
+     *      description="Get the list of Characters"
+     * )
      */
     public function listAction(Request $request)
     {
@@ -23,6 +28,19 @@ class CharacterController extends APIBaseController
 
     /**
      * {@inheritdoc}
+     *
+     * @ApiDoc(
+     *      section="Character",
+     *      description="Get the details of a Character based on his ID",
+     *      requirements={
+     *          {
+     *              "name"="id",
+     *              "dataType"="integer",
+     *              "requirement"="\d+",
+     *              "description"="Character ID"
+     *          }
+     *      }
+     * )
      */
     public function getAction(Request $request, $id)
     {
@@ -31,6 +49,11 @@ class CharacterController extends APIBaseController
 
     /**
      * {@inheritdoc}
+     *
+     * @ApiDoc(
+     *      section="Character",
+     *      description="NOT IMPLEMENTED"
+     * )
      */
     public function postAction(Request $request)
     {
@@ -39,6 +62,19 @@ class CharacterController extends APIBaseController
 
     /**
      * {@inheritdoc}
+     *
+     * @ApiDoc(
+     *      section="Character",
+     *      description="NOT IMPLEMENTED",
+     *      requirements={
+     *          {
+     *              "name"="id",
+     *              "dataType"="integer",
+     *              "requirement"="\d+",
+     *              "description"="Character ID"
+     *          }
+     *      }
+     * )
      */
     public function putAction(Request $request, $id)
     {
@@ -47,10 +83,22 @@ class CharacterController extends APIBaseController
 
     /**
      * {@inheritdoc}
+     *
+     * @ApiDoc(
+     *      section="Character",
+     *      description="NOT IMPLEMENTED",
+     *      requirements={
+     *          {
+     *              "name"="id",
+     *              "dataType"="integer",
+     *              "requirement"="\d+",
+     *              "description"="Character ID"
+     *          }
+     *      }
+     * )
      */
     public function deleteAction(Request $request, $id)
     {
         return $this->getServerErrorResponseBuilder()->notImplemented();
     }
-
 }
