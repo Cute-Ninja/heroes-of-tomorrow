@@ -28,9 +28,9 @@ class CharacterController extends APIBaseController
         $characterRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTCharacterBundle:Character');
 
         $serializationContexts = ['common'];
-        $query = $characterRepository->getForListActionQueryBuilder();
+        $query                 = $characterRepository->getForListActionQueryBuilder();
 
-        $page = $this->getPageForPagination($request);
+        $page  = $this->getPageForPagination($request);
         $limit = $this->getLimitForPagination($request);
 
         $paginator = $this->getPaginator()->paginate($query, $page, $limit);

@@ -41,7 +41,9 @@ CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
     single-under (extends exercise):
         name: Single Under
         difficulty: 2
+        equipments: [@jumpRope]
 
     double-under (extends exercise):
         name: Double Under
         difficulty: 4
+        equipments: [@jumpRope]

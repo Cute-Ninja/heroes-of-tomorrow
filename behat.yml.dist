@@ -14,6 +14,11 @@ default:
                 - %paths.base%/src/CuteNinja/HOT/CharacterBundle/Tests/Features/Character
             contexts:
                 - CuteNinja\HOT\CharacterBundle\Tests\Context\CharacterContext
+        Exercise:
+            paths:
+                - %paths.base%/src/CuteNinja/HOT/WorkoutBundle/Tests/Features/Exercise
+            contexts:
+                - CuteNinja\HOT\WorkoutBundle\Tests\Context\ExerciseContext
         Workout:
             paths:
                 - %paths.base%/src/CuteNinja/HOT/WorkoutBundle/Tests/Features/Workout

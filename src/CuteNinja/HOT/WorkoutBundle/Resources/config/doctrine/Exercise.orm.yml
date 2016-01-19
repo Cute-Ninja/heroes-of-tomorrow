@@ -29,3 +29,15 @@ CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
             unique: false
             nullable: true
             precision: 0
+
+    manyToMany:
+        equipments:
+            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\Equipment
+            joinTable:
+                name: exercise_has_equipment
+                joinColumns:
+                    exercise_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    equipment_id:
+                        referencedColumnName: id

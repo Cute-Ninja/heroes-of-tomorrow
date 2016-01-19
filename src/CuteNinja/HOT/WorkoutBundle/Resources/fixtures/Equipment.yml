@@ -8,5 +8,5 @@ CuteNinja\HOT\WorkoutBundle\Entity\Equipment:
     kettlebell (extends equipment):
         name: Kettlebell
 
-    jump-rope (extends equipment):
+    jumpRope (extends equipment):
         name: Jump Rope

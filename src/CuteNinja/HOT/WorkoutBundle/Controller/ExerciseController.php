@@ -1,34 +1,34 @@
 <?php
 
-namespace CuteNinja\HOT\UserBundle\Controller;
+namespace CuteNinja\HOT\WorkoutBundle\Controller;
 
-use CuteNinja\HOT\UserBundle\Repository\UserRepository;
+use CuteNinja\HOT\WorkoutBundle\Repository\ExerciseRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class UserController
+ * Class ExerciseController
  *
- * @package CuteNinja\HOT\UserBundle\Controller
+ * @package CuteNinja\HOT\WorkoutBundle\Controller
  */
-class UserController extends APIBaseController
+class ExerciseController extends APIBaseController
 {
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
-     *      description="Get the list of Users"
+     *      section="Exercise",
+     *      description="Get the list of Exercises"
      * )
      */
     public function listAction(Request $request)
     {
-        /** @var UserRepository $userRepository */
-        $userRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User');
+        /** @var ExerciseRepository $exerciseRepository */
+        $exerciseRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Exercise');
 
         $serializationContexts = ['common'];
-        $query                 = $userRepository->getForListActionQueryBuilder();
+        $query                 = $exerciseRepository->getForListActionQueryBuilder();
 
         $page  = $this->getPageForPagination($request);
         $limit = $this->getLimitForPagination($request);
@@ -42,32 +42,32 @@ class UserController extends APIBaseController
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
-     *      description="Get the details of a User based on his ID",
+     *      section="Exercise",
+     *      description="Get the details of a Exercise based on his ID",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Character ID"
      *          }
      *      }
      * )
      */
     public function getAction(Request $request, $id)
     {
-        $user = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User')->find($id);
+        $exercise = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Exercise')->find($id);
 
-        $serializationContexts = ['common'];
+        $serializationContexts = ['common', 'equipment'];
 
-        return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($user, $serializationContexts);
+        return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($exercise, $serializationContexts);
     }
 
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Exercise",
      *      description="NOT IMPLEMENTED"
      * )
      */
@@ -80,14 +80,14 @@ class UserController extends APIBaseController
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Exercise",
      *      description="NOT IMPLEMENTED",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Exercise ID"
      *          }
      *      }
      * )
@@ -101,14 +101,14 @@ class UserController extends APIBaseController
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Exercise",
      *      description="NOT IMPLEMENTED",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Exercise ID"
      *          }
      *      }
      * )

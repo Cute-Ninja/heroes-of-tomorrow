@@ -1,0 +1,9 @@
+CuteNinja\HOT\WorkoutBundle\Entity\Equipment:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [common]
+        name:
+            expose: true
+            groups: [common]

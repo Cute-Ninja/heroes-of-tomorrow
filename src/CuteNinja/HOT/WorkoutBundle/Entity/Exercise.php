@@ -19,6 +19,11 @@ class Exercise extends BaseEntity
     protected $id;
 
     /**
+     * @var Equipment[] $equipments
+     */
+    protected $equipments;
+
+    /**
      * @var string $name
      */
     protected $name;
@@ -44,6 +49,26 @@ class Exercise extends BaseEntity
     public function setId($id)
     {
         $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return Equipment[]
+     */
+    public function getEquipments()
+    {
+        return $this->equipments;
+    }
+
+    /**
+     * @param Equipment[] $equipments
+     *
+     * @return $this
+     */
+    public function setEquipments($equipments)
+    {
+        $this->equipments = $equipments;
 
         return $this;
     }

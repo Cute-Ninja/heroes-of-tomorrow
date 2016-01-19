@@ -28,16 +28,15 @@ class WorkoutController extends APIBaseController
         $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout');
 
         $serializationContexts = ['common'];
-        $query = $workoutRepository->getForListActionQueryBuilder();
+        $query                 = $workoutRepository->getForListActionQueryBuilder();
 
-        $page = $this->getPageForPagination($request);
+        $page  = $this->getPageForPagination($request);
         $limit = $this->getLimitForPagination($request);
 
         $paginator = $this->getPaginator()->paginate($query, $page, $limit);
 
         return $this->getSuccessResponseBuilder()->buildMultiObjectResponse($paginator, $request, $this->getRouter(), $serializationContexts);
     }
-
 
     /**
      * {@inheritdoc}
@@ -77,7 +76,6 @@ class WorkoutController extends APIBaseController
         return $this->getServerErrorResponseBuilder()->notImplemented();
     }
 
-
     /**
      * {@inheritdoc}
      *
@@ -98,7 +96,7 @@ class WorkoutController extends APIBaseController
     {
         return $this->getServerErrorResponseBuilder()->notImplemented();
     }
-    
+
     /**
      * {@inheritdoc}
      *
