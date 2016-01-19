@@ -10,7 +10,7 @@ namespace CuteNinja\HOT\UserBundle\Tests\Context;
 class UserContext extends BaseContext
 {
     const USER_ID_NOT_EXISTING = 1337;
-    const API_NAME                  = 'users';
+    const API_NAME             = 'users';
 
     /**
      * @When I want to list all Users

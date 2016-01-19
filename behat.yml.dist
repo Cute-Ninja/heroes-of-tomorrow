@@ -4,8 +4,18 @@ default:
     autoload:
         '': app/features/boostrap/
     suites:
+        User:
+           paths:
+               - %paths.base%/src/CuteNinja/HOT/UserBundle/Tests/Features/User
+           contexts:
+               - CuteNinja\HOT\UserBundle\Tests\Context\UserContext
         Character:
             paths:
                 - %paths.base%/src/CuteNinja/HOT/CharacterBundle/Tests/Features/Character
             contexts:
                 - CuteNinja\HOT\CharacterBundle\Tests\Context\CharacterContext
+        Workout:
+            paths:
+                - %paths.base%/src/CuteNinja/HOT/WorkoutBundle/Tests/Features/Workout
+            contexts:
+                - CuteNinja\HOT\WorkoutBundle\Tests\Context\WorkoutContext
