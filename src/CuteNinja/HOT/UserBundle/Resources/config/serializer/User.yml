@@ -15,6 +15,10 @@ CuteNinja\HOT\UserBundle\Entity\User:
         status:
             expose: false
 
+        referrer:
+            expose: true
+            groups: [referrer]
+
         createdAt:
             expose: true
             groups: [common]

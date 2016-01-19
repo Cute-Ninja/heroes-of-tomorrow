@@ -28,6 +28,11 @@ class User extends PersonaUser
     protected $character;
 
     /**
+     * @var User $referrer
+     */
+    protected $referrer;
+
+    /**
      * @var \DateTime $createdAt
      */
     protected $createdAt;
@@ -93,21 +98,21 @@ class User extends PersonaUser
     }
 
     /**
-     * @return \DateTime
+     * @return User
      */
-    public function getCreatedAt()
+    public function getReferrer()
     {
-        return $this->createdAt;
+        return $this->referrer;
     }
 
     /**
-     * @param \DateTime $createdAt
+     * @param User $referrer
      *
      * @return $this
      */
-    public function setCreatedAt($createdAt)
+    public function setReferrer($referrer)
     {
-        $this->createdAt = $createdAt;
+        $this->referrer = $referrer;
 
         return $this;
     }

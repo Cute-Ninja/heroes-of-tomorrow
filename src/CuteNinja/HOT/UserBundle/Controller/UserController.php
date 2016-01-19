@@ -58,7 +58,7 @@ class UserController extends APIBaseController
     {
         $user = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User')->find($id);
 
-        $serializationContexts = ['common'];
+        $serializationContexts = ['common', 'referrer'];
 
         return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($user, $serializationContexts);
     }

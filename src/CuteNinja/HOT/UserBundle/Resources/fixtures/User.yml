@@ -1,12 +1,18 @@
 CuteNinja\HOT\UserBundle\Entity\User:
     base_user (template):
         password: $2y$13$2/x7uwgOgQ3.N/WSLWHqo.A/jdzvfn3kXIHlZWkjRUf6fjiMMTuHG # Plain password: Jp1vn7x6sq
+        referrer: ~
 
     ghriim (extends base_user):
         username: Ghriim
         email: ghriim@fakemail.com
 
-    user_{2..100} (extends base_user):
+    user_{2..50} (extends base_user):
         username: <username()>
         email: <email()>
+
+    user_{51..100} (extends base_user):
+        username: <username()>
+        email: <email()>
+        referrer: @ghriim
 
