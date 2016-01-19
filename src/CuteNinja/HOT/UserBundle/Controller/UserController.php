@@ -73,27 +73,32 @@ class UserController extends APIBaseController
      *
      * @ApiDoc(
      *      section="User",
-     *      description="NOT IMPLEMENTED"
+     *      description="Register a new User",
+     *      requirements={
+     *          {"name"="email", "required"=true, "dataType"="string", "description"="Email of the User"},
+     *          {"name"="username", "required"=true, "dataType"="string", "description"="Username used to login (must be unique on the platform)"},
+     *          {"name"="password", "required"=true, "dataType"="string", "description"="Password used to login"},
+     *      }
      * )
      */
     public function postAction(Request $request)
     {
         $user = new User();
-        $form = $this->createForm(new UserType(), $user);
+        $form = $this->createForm(new UserType(), $user, ['method' => 'POST']);
 
         $form->handleRequest($request);
         if (!$form->isValid()) {
             return $this->getClientErrorResponseBuilder()->jsonResponseFormError($form);
         }
 
-        $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
+        $password = $this->get('security.password_encoder')->encodePassword($user, $form->get('password')->getData());
         $user->setPassword($password);
 
         $manager = $this->getDoctrine()->getManager();
         $manager->persist($user);
         $manager->flush();
 
-        return $this->getSuccessResponseBuilder()->postSuccess('cute_ninja_hot_api_user_get', ['id' => $user->getId()]);
+        return $this->getSuccessResponseBuilder()->postSuccess();
     }
 
     /**
@@ -114,7 +119,30 @@ class UserController extends APIBaseController
      */
     public function putAction(Request $request, $id)
     {
-        return $this->getServerErrorResponseBuilder()->notImplemented();
+        /** @var User $user */
+        $user = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User')->find($id);
+        if (!$user) {
+            return $this->getClientErrorResponseBuilder()->notFound();
+        }
+        if ($user->getId() != $this->getUser()->getId()) {
+            return $this->getClientErrorResponseBuilder()->forbidden();
+        }
+
+        $form = $this->createForm(new UserType(), $user, ['method' => 'PUT']);
+
+        $form->handleRequest($request);
+        if (!$form->isValid()) {
+            return $this->getClientErrorResponseBuilder()->jsonResponseFormError($form);
+        }
+
+        if($newPassword = $form->get('password')->getData()) {
+            $password = $this->get('security.password_encoder')->encodePassword($user, $form->get('password')->getData());
+            $user->setPassword($password);
+        }
+
+        $this->getDoctrine()->getManager()->flush();
+
+        return $this->getSuccessResponseBuilder()->putSuccess();
     }
 
     /**
