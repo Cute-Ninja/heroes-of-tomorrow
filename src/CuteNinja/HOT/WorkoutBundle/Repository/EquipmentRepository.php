@@ -18,7 +18,7 @@ class EquipmentRepository extends EntityRepository
     public function getQueryBuilder()
     {
         $queryBuilder = $this->createQueryBuilder('equipment');
-        $queryBuilder->select('DISTINCT workout');
+        $queryBuilder->select('DISTINCT equipment');
 
         return $queryBuilder;
     }

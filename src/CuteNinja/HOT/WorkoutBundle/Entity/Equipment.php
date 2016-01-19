@@ -21,6 +21,11 @@ class Equipment extends BaseEntity
     protected $name;
 
     /**
+     * @var string $amazonLink
+     */
+    protected $amazonLink;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -56,6 +61,26 @@ class Equipment extends BaseEntity
     public function setName($name)
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAmazonLink()
+    {
+        return $this->amazonLink;
+    }
+
+    /**
+     * @param string $amazonLink
+     *
+     * @return $this
+     */
+    public function setAmazonLink($amazonLink)
+    {
+        $this->amazonLink = $amazonLink;
 
         return $this;
     }

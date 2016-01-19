@@ -1,0 +1,30 @@
+cute_ninja_hot_api_equipment_list:
+    path: /equipments
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Equipment:list }
+    methods: [GET]
+
+cute_ninja_hot_api_equipment_get:
+    path: /equipments/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Equipment:get }
+    methods: [GET]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_equipment_post:
+    path: /equipments
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Equipment:post }
+    methods: [POST]
+
+cute_ninja_hot_api_equipment_put:
+    path: /equipments/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Equipment:put }
+    methods: [PUT]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_equipment_delete:
+    path: /equipments/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Equipment:delete }
+    methods: [DELETE]
+    requirements:
+        id: \d+

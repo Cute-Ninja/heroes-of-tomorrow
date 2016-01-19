@@ -4,9 +4,12 @@ CuteNinja\HOT\WorkoutBundle\Entity\Equipment:
 
     barbell (extends equipment):
         name: Barbell
+        amazonLink: http://amazon.com/
 
     kettlebell (extends equipment):
         name: Kettlebell
+        amazonLink: http://amazon.com/
 
     jumpRope (extends equipment):
         name: Jump Rope
+        amazonLink: http://amazon.com/

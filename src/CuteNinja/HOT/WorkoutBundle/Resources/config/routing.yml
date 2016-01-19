@@ -4,3 +4,6 @@ cute_ninja_hot_api_workout:
 cute_ninja_hot_api_exercise:
     resource: "@CuteNinjaHOTWorkoutBundle/Resources/config/routing/Exercise.yml"
 
+cute_ninja_hot_api_equipment:
+    resource: "@CuteNinjaHOTWorkoutBundle/Resources/config/routing/Equipment.yml"
+

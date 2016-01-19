@@ -7,3 +7,6 @@ CuteNinja\HOT\WorkoutBundle\Entity\Equipment:
         name:
             expose: true
             groups: [common]
+        amazonLink:
+            expose: true
+            groups: [shopping]
