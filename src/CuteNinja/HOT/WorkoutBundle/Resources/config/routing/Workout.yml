@@ -1,0 +1,30 @@
+cute_ninja_hot_api_workout_list:
+    path: /workouts
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Workout:list }
+    methods: [GET]
+
+cute_ninja_hot_api_workout_get:
+    path: /workouts/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Workout:get }
+    methods: [GET]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_workout_post:
+    path: /workouts
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Workout:post }
+    methods: [POST]
+
+cute_ninja_hot_api_workout_put:
+    path: /workouts/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Workout:put }
+    methods: [PUT]
+    requirements:
+        id: \d+
+
+cute_ninja_hot_api_workout_delete:
+    path: /workouts/{id}
+    defaults: { _controller: CuteNinjaHOTWorkoutBundle:Workout:delete }
+    methods: [DELETE]
+    requirements:
+        id: \d+

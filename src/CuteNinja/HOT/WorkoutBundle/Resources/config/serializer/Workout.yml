@@ -1,0 +1,14 @@
+CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+    exclusion_policy: ALL
+    properties:
+        id:
+            expose: true
+            groups: [common]
+
+        name:
+            expose: true
+            groups: [common]
+
+        difficulty:
+            expose: true
+            groups: [common]

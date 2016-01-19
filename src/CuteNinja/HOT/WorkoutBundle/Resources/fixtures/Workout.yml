@@ -1,0 +1,31 @@
+CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+    workout (template):
+        status: active
+
+    thor (extends workout):
+        name: Thor
+        difficulty: 5
+
+    loki (extends workout):
+        name: Loki
+        difficulty: 4
+
+    heimdall (extends workout):
+        name: Heimdall
+        difficulty: 3
+
+    sleipnir (extends workout):
+        name: Sleipnir
+        difficulty: 2
+
+    freyja (extends workout):
+        name: Freyja
+        difficulty: 2
+
+    fenrir (extends workout):
+        name: Fenrir
+        difficulty: 1
+
+    fafnir (extends workout):
+        name: Fafnir
+        difficulty: 1

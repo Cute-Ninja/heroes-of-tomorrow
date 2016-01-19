@@ -28,6 +28,7 @@ class AppKernel extends Kernel
 
             new CuteNinja\HOT\UserBundle\CuteNinjaHOTUserBundle(),
             new CuteNinja\HOT\CharacterBundle\CuteNinjaHOTCharacterBundle(),
+            new CuteNinja\HOT\WorkoutBundle\CuteNinjaHOTWorkoutBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

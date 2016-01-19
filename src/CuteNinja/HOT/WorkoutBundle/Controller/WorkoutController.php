@@ -1,34 +1,34 @@
 <?php
 
-namespace CuteNinja\HOT\UserBundle\Controller;
+namespace CuteNinja\HOT\WorkoutBundle\Controller;
 
-use CuteNinja\HOT\UserBundle\Repository\UserRepository;
+use CuteNinja\HOT\WorkoutBundle\Repository\WorkoutRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Class UserController
+ * Class WorkoutController
  *
- * @package CuteNinja\HOT\UserBundle\Controller
+ * @package CuteNinja\HOT\WorkoutBundle\Controller
  */
-class UserController extends APIBaseController
+class WorkoutController extends APIBaseController
 {
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
-     *      description="Get the list of Users"
+     *      section="Workout",
+     *      description="Get the list of Workouts"
      * )
      */
     public function listAction(Request $request)
     {
-        /** @var UserRepository $userRepository */
-        $userRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User');
+        /** @var WorkoutRepository $workoutRepository */
+        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout');
 
         $serializationContexts = ['common'];
-        $query = $userRepository->getForListActionQueryBuilder();
+        $query = $workoutRepository->getForListActionQueryBuilder();
 
         $page = $this->getPageForPagination($request);
         $limit = $this->getLimitForPagination($request);
@@ -38,36 +38,37 @@ class UserController extends APIBaseController
         return $this->getSuccessResponseBuilder()->buildMultiObjectResponse($paginator, $request, $this->getRouter(), $serializationContexts);
     }
 
+
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
-     *      description="Get the details of a User based on his ID",
+     *      section="Workout",
+     *      description="Get the details of a Workout based on his ID",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Character ID"
      *          }
      *      }
      * )
      */
     public function getAction(Request $request, $id)
     {
-        $user = $this->getDoctrine()->getRepository('CuteNinjaHOTUserBundle:User')->find($id);
+        $workout = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout')->find($id);
 
         $serializationContexts = ['common'];
 
-        return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($user, $serializationContexts);
+        return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($workout, $serializationContexts);
     }
 
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Workout",
      *      description="NOT IMPLEMENTED"
      * )
      */
@@ -76,18 +77,19 @@ class UserController extends APIBaseController
         return $this->getServerErrorResponseBuilder()->notImplemented();
     }
 
+
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Workout",
      *      description="NOT IMPLEMENTED",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Workout ID"
      *          }
      *      }
      * )
@@ -96,19 +98,19 @@ class UserController extends APIBaseController
     {
         return $this->getServerErrorResponseBuilder()->notImplemented();
     }
-
+    
     /**
      * {@inheritdoc}
      *
      * @ApiDoc(
-     *      section="User",
+     *      section="Workout",
      *      description="NOT IMPLEMENTED",
      *      requirements={
      *          {
      *              "name"="id",
      *              "dataType"="integer",
      *              "requirement"="\d+",
-     *              "description"="User ID"
+     *              "description"="Workout ID"
      *          }
      *      }
      * )

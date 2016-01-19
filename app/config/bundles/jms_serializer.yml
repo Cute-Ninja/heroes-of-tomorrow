@@ -12,5 +12,8 @@ jms_serializer:
             CharacterBundle:
                 namespace_prefix: "CuteNinja\\HOT\\CharacterBundle\\Entity"
                 path: "@CuteNinjaHOTCharacterBundle/Resources/config/serializer"
+            WorkoutBundle:
+                namespace_prefix: "CuteNinja\\HOT\\WorkoutBundle\\Entity"
+                path: "@CuteNinjaHOTWorkoutBundle/Resources/config/serializer"
 
 
