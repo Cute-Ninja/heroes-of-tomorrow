@@ -2,7 +2,7 @@
 
 namespace CuteNinja\HOT\CharacterBundle\Tests\Context;
 
-use CuteNinja\ParabolaBundle\Tests\Feature\Context\BaseContext;
+use CuteNinja\HOT\UserBundle\Tests\Context\BaseContext;
 
 /**
  * Class CharacterContext
@@ -61,31 +61,7 @@ class CharacterContext extends BaseContext
     }
 
     /**
-     * @When I want to see the Inventory of the Character named :name
-     *
      * @param string $name
-     */
-    public function iWantToSeeTheInventoryOfTheCharacterNamed($name)
-    {
-        $this->requestApi('GET', '/api/' . self::API_NAME . '/' . $this->getCharacterIdForTest($name) . '/inventory');
-    }
-
-    /**
-     * @Then the response body should contain the details of the Character
-     */
-    public function theResponseBodyShouldContainTheDetailsOfTheCharacter()
-    {
-    }
-
-    /**
-     * @Then the response body should contain the Inventory of the Character
-     */
-    public function theResponseBodyShouldContainTheInventoryOfTheCharacter()
-    {
-    }
-
-    /**
-     * @param $name
      *
      * @return int
      */
