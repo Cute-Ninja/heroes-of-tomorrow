@@ -1,6 +1,6 @@
 CuteNinja\HOT\UserBundle\Entity\User:
     type: entity
-    table: "`character`"
+    table: "`user`"
     repositoryClass: CuteNinja\HOT\UserBundle\Repository\UserRepository
     id:
         id:

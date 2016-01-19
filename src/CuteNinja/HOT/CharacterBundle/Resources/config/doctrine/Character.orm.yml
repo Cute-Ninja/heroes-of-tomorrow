@@ -1,6 +1,6 @@
 CuteNinja\HOT\CharacterBundle\Entity\Character:
     type: entity
-    table: "`user`"
+    table: "`character`"
     repositoryClass: CuteNinja\HOT\CharacterBundle\Repository\CharacterRepository
     id:
         id:

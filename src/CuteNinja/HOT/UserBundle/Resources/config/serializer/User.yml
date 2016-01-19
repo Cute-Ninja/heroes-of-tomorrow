@@ -18,6 +18,7 @@ CuteNinja\HOT\UserBundle\Entity\User:
         referrer:
             expose: true
             groups: [referrer]
+            max_depth: 1
 
         createdAt:
             expose: true

@@ -1,0 +1,35 @@
+CuteNinja\HOT\UserBundle\Entity\User:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [email]
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [username]
+    properties:
+        email:
+            - NotBlank: ~
+            - Email: ~
+            - Type:
+                type: string
+            - Length:
+                min: 5
+                max: 200
+
+        username:
+            - NotBlank: ~
+            - Type:
+                type: string
+            - Length:
+                min: 2
+                max: 30
+
+        password:
+            - NotBlank: ~
+            - Type:
+                type: string
+            - Length:
+                min: 5
+
+        referrer:
+            - Type:
+                type: CuteNinja\HOT\UserBundle\Entity\User
+

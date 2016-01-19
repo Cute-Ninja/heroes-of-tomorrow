@@ -2,8 +2,11 @@
 
 namespace CuteNinja\HOT\UserBundle\Controller;
 
+use CuteNinja\HOT\UserBundle\Entity\User;
+use CuteNinja\HOT\UserBundle\Form\Type\UserType;
 use CuteNinja\HOT\UserBundle\Repository\UserRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
+use FOS\RestBundle\Controller\Annotations\View;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -53,6 +56,8 @@ class UserController extends APIBaseController
      *          }
      *      }
      * )
+     *
+     * @View(serializerEnableMaxDepthChecks=true)
      */
     public function getAction(Request $request, $id)
     {
@@ -73,7 +78,22 @@ class UserController extends APIBaseController
      */
     public function postAction(Request $request)
     {
-        return $this->getServerErrorResponseBuilder()->notImplemented();
+        $user = new User();
+        $form = $this->createForm(new UserType(), $user);
+
+        $form->handleRequest($request);
+        if (!$form->isValid()) {
+            return $this->getClientErrorResponseBuilder()->jsonResponseFormError($form);
+        }
+
+        $password = $this->get('security.password_encoder')->encodePassword($user, $user->getPassword());
+        $user->setPassword($password);
+
+        $manager = $this->getDoctrine()->getManager();
+        $manager->persist($user);
+        $manager->flush();
+
+        return $this->getSuccessResponseBuilder()->postSuccess('cute_ninja_hot_api_user_get', ['id' => $user->getId()]);
     }
 
     /**

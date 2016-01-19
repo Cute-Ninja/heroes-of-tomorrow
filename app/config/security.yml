@@ -29,6 +29,12 @@ security:
                 failure_handler:          lexik_jwt_authentication.handler.authentication_failure
                 require_previous_session: false
 
+        api_register:
+            pattern: ^/api/users
+            methods: [POST]
+            anonymous: true
+            stateless: true
+
         secured_area:
             provider:  user_provider
             pattern:   ^/api
@@ -37,4 +43,5 @@ security:
 
     access_control:
         - { path: ^/api/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/users, methods: [POST], roles: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
