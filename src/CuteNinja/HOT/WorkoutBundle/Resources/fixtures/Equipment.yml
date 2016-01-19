@@ -1,0 +1,12 @@
+CuteNinja\HOT\WorkoutBundle\Entity\Equipment:
+    equipment (template):
+        status: active
+
+    barbell (extends equipment):
+        name: Barbell
+
+    kettlebell (extends equipment):
+        name: Kettlebell
+
+    jump-rope (extends equipment):
+        name: Jump Rope

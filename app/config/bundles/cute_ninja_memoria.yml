@@ -3,4 +3,6 @@ cute_ninja_memoria:
     fixtures:
         - { resource: src/CuteNinja/HOT/UserBundle/Resources/fixtures/User.yml }
         - { resource: src/CuteNinja/HOT/CharacterBundle/Resources/fixtures/Character.yml }
+        - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Equipment.yml }
+        - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Exercise.yml }
         - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Workout.yml }

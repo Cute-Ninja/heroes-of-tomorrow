@@ -1,0 +1,47 @@
+CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
+    exercise (template):
+        status: active
+
+    squat (extends exercise):
+        name: Squat
+        difficulty: 1
+
+    pistol-squat (extends exercise):
+        name: Pistol Squat
+        difficulty: 5
+
+    push-up (extends exercise):
+        name: Push Up
+        difficulty: 1
+
+    sit-up (extends exercise):
+        name: Sit Up
+        difficulty: 1
+
+    front-plank (extends exercise):
+        name: Front Plank
+        difficulty: 1
+
+    side-plank (extends exercise):
+        name: Side Plank
+        difficulty: 2
+
+    reverse-plank (extends exercise):
+        name: Reverse Squat
+        difficulty: 3
+
+    superman (extends exercise):
+        name: Superman
+        difficulty: 3
+
+    burpee (extends exercise):
+        name: Burpee
+        difficulty: 4
+
+    single-under (extends exercise):
+        name: Single Under
+        difficulty: 2
+
+    double-under (extends exercise):
+        name: Double Under
+        difficulty: 4
