@@ -74,10 +74,11 @@ class UserController extends APIBaseController
      * @ApiDoc(
      *      section="User",
      *      description="Register a new User",
-     *      requirements={
+     *      parameters={
      *          {"name"="email", "required"=true, "dataType"="string", "description"="Email of the User"},
      *          {"name"="username", "required"=true, "dataType"="string", "description"="Username used to login (must be unique on the platform)"},
      *          {"name"="password", "required"=true, "dataType"="string", "description"="Password used to login"},
+     *          {"name"="referrer", "required"=false, "dataType"="integer", "description"="Referrer User ID"}
      *      }
      * )
      */
@@ -106,7 +107,7 @@ class UserController extends APIBaseController
      *
      * @ApiDoc(
      *      section="User",
-     *      description="NOT IMPLEMENTED",
+     *      description="Edit an existing User",
      *      requirements={
      *          {
      *              "name"="id",
@@ -114,6 +115,10 @@ class UserController extends APIBaseController
      *              "requirement"="\d+",
      *              "description"="User ID"
      *          }
+     *      },
+     *      parameters={
+     *          {"name"="email", "required"=false, "dataType"="string", "description"="Email of the User"},
+     *          {"name"="password", "required"=false, "dataType"="string", "description"="Password used to login"}
      *      }
      * )
      */
@@ -124,7 +129,7 @@ class UserController extends APIBaseController
         if (!$user) {
             return $this->getClientErrorResponseBuilder()->notFound();
         }
-        if ($user->getId() != $this->getUser()->getId()) {
+        if ($user->getId() !== $this->getUser()->getId()) {
             return $this->getClientErrorResponseBuilder()->forbidden();
         }
 
@@ -135,7 +140,7 @@ class UserController extends APIBaseController
             return $this->getClientErrorResponseBuilder()->jsonResponseFormError($form);
         }
 
-        if($newPassword = $form->get('password')->getData()) {
+        if ($newPassword = $form->get('password')->getData()) {
             $password = $this->get('security.password_encoder')->encodePassword($user, $form->get('password')->getData());
             $user->setPassword($password);
         }

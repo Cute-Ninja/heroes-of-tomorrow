@@ -12,4 +12,4 @@ Feature: Display the list of a Users
     Then the response should be JSON
     And the response must be optimized
     And the response status code should be 200
-    And the list should contains 100 items
+    And the list should contains 102 items

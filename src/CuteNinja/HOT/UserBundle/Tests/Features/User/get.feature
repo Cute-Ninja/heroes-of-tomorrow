@@ -1,6 +1,6 @@
 Feature: Display the details of a User
 
-  Scenario Outline: An Anonymous User want to access the details of a non existing User
+  Scenario Outline: An Anonymous User want to access the details of an User
     Given I am an Anonymous User
     When I want to see the details of the User named "<username>"
     Then the response should be JSON
@@ -11,7 +11,7 @@ Feature: Display the details of a User
       | Ghriim      |
 
 
-  Scenario Outline: A logged in User want to access the details of an existing User
+  Scenario Outline: A logged in User want to access the details of an User
     Given I am the Player named "Ghriim"
     When I want to see the details of the User named "<username>"
     Then the response should be JSON

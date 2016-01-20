@@ -3,8 +3,7 @@ Feature: Display the details of a Character
   Scenario Outline: An Anonymous Character want to edit a non existing Character
     Given I am an Anonymous User
     When I want to edit the Character named "<username>"
-    Then the response should be JSON
-    And the response status code should be 401
+    Then the response status code should be 401
     Examples:
       | username        |
       | nonexistent     |
@@ -14,8 +13,7 @@ Feature: Display the details of a Character
   Scenario Outline: A logged in Character want to edit an existing Character
     Given I am the Player named "Ghriim"
     When I want to edit the Character named "<username>"
-    Then the response should be JSON
-    And the response status code should be <responseCode>
+    Then the response status code should be <responseCode>
     Examples:
       | username        | responseCode |
       | nonexistent     | 501          |

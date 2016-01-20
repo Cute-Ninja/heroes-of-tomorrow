@@ -2,6 +2,8 @@
 
 namespace CuteNinja\HOT\UserBundle\Tests\Context;
 
+use Behat\Gherkin\Node\TableNode;
+
 /**
  * Class UserContext
  *
@@ -32,20 +34,25 @@ class UserContext extends BaseContext
 
     /**
      * @When I want to add a new User
+     * @When I want to add a new User with the following values
+     *
+     * @param TableNode|null $table
      */
-    public function iWantToCreateAnUser()
+    public function iWantToCreateAnUser(TableNode $table = null)
     {
-        $this->iWantToCreate(self::API_NAME);
+        $this->iWantToCreate(self::API_NAME, $this->getFormData($table));
     }
 
     /**
      * @When I want to edit the User named :username
+     * @When I want to edit the User named :username with the following values
      *
-     * @param string $username
+     * @param string         $username
+     * @param TableNode|null $table
      */
-    public function iWantToEditTheUserNamed($username)
+    public function iWantToEditTheUserNamed($username, TableNode $table = null)
     {
-        $this->iWantToEdit(self::API_NAME, $this->getUserIdForTest($username));
+        $this->iWantToEdit(self::API_NAME, $this->getUserIdForTest($username), $this->getFormData($table));
     }
 
     /**
