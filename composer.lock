@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cute-Ninja/memoria-bundle.git",
-                "reference": "ddfdf34fa301f0948a12b2a8c093afb3086f73bd"
+                "reference": "9e1399d469a28c9d92c44354bfa81cf3c2730ffc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cute-Ninja/memoria-bundle/zipball/ddfdf34fa301f0948a12b2a8c093afb3086f73bd",
-                "reference": "ddfdf34fa301f0948a12b2a8c093afb3086f73bd",
+                "url": "https://api.github.com/repos/Cute-Ninja/memoria-bundle/zipball/9e1399d469a28c9d92c44354bfa81cf3c2730ffc",
+                "reference": "9e1399d469a28c9d92c44354bfa81cf3c2730ffc",
                 "shasum": ""
             },
             "require": {
@@ -58,7 +58,7 @@
                 "api",
                 "common"
             ],
-            "time": "2015-12-23 11:12:10"
+            "time": "2016-01-20 13:05:04"
         },
         {
             "name": "cuteninja/parabola-bundle",
@@ -118,12 +118,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Cute-Ninja/persona-bundle.git",
-                "reference": "46641a33efcbbf98c1d8ea0c7197790ebbd129e6"
+                "reference": "3b67880a1adab06892632f9aedf5b1294f8e921f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Cute-Ninja/persona-bundle/zipball/46641a33efcbbf98c1d8ea0c7197790ebbd129e6",
-                "reference": "46641a33efcbbf98c1d8ea0c7197790ebbd129e6",
+                "url": "https://api.github.com/repos/Cute-Ninja/persona-bundle/zipball/3b67880a1adab06892632f9aedf5b1294f8e921f",
+                "reference": "3b67880a1adab06892632f9aedf5b1294f8e921f",
                 "shasum": ""
             },
             "require": {
@@ -161,7 +161,7 @@
             "keywords": [
                 "user"
             ],
-            "time": "2015-12-23 13:41:48"
+            "time": "2016-01-20 09:23:40"
         },
         {
             "name": "doctrine/annotations",

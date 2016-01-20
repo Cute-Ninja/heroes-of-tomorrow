@@ -28,6 +28,14 @@ class Character extends BaseEntity
     protected $user;
 
     /**
+     * @param User $user
+     */
+    public function __construct(User $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
      * @return int
      */
     public function getId()

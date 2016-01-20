@@ -1,17 +1,17 @@
 <?php
 
-namespace CuteNinja\HOT\UserBundle\Form\Type;
+namespace CuteNinja\HOT\CharacterBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class UserType
+ * Class CharacterType
  *
- * @package CuteNinja\HOT\UserBundle\Form\Type
+ * @package CuteNinja\HOT\CharacterBundle\Form\Type
  */
-class UserType extends AbstractType
+class CharacterType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -20,15 +20,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email')
-            ->add('password');
-
-        if ($options['method'] === 'POST') {
-            $builder
-                ->add('username')
-                ->add('referrer');
-        }
-
+            ->add('name');
     }
 
     /**
@@ -40,7 +32,7 @@ class UserType extends AbstractType
 
         $resolver->setDefaults(
             [
-                'data_class'      => 'CuteNinja\HOT\UserBundle\Entity\User',
+                'data_class'      => 'CuteNinja\HOT\CharacterBundle\Entity\Character',
                 'csrf_protection' => false,
             ]
         );

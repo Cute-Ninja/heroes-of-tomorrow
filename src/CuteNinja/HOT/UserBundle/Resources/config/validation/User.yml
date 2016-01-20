@@ -7,28 +7,22 @@ CuteNinja\HOT\UserBundle\Entity\User:
     properties:
         username:
             - NotBlank: ~
-            - Type:
-                type: string
+            - Type: string
             - Length:
                 min: 2
                 max: 30
         email:
             - NotBlank: ~
             - Email: ~
-            - Type:
-                type: string
+            - Type: string
             - Length:
                 min: 5
                 max: 200
-
         password:
             - NotBlank: ~
-            - Type:
-                type: string
+            - Type: string
             - Length:
                 min: 5
-
         referrer:
-            - Type:
-                type: CuteNinja\HOT\UserBundle\Entity\User
+            - Type: CuteNinja\HOT\UserBundle\Entity\User
 

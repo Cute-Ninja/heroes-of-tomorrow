@@ -1,8 +1,8 @@
 CuteNinja\HOT\CharacterBundle\Entity\Character:
     cernunnos:
+        __construct: [@ghriim]
         name: oGN - Cernunnos
-        user: @ghriim
 
     character_{2..100}:
+        __construct: [@user_<current()>]
         name: <username()>
-        user: @user_<current()>

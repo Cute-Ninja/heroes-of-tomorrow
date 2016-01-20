@@ -18,7 +18,7 @@ Feature: Display the details of a User
       | password | azerty                |
     Then the response status code should be <responseCode>
     Examples:
-      | username    | responseCode |
-      | nonexistent | 404          |
-      | Ghriim      | 204          |
-      | anotherUser | 403          |
+      | username             | responseCode |
+      | nonexistent          | 404          |
+      | Ghriim               | 204          |
+      | userWithoutCharacter | 403          |

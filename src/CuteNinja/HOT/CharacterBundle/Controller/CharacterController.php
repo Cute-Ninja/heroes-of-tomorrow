@@ -2,6 +2,8 @@
 
 namespace CuteNinja\HOT\CharacterBundle\Controller;
 
+use CuteNinja\HOT\CharacterBundle\Entity\Character;
+use CuteNinja\HOT\CharacterBundle\Form\Type\CharacterType;
 use CuteNinja\HOT\CharacterBundle\Repository\CharacterRepository;
 use CuteNinja\ParabolaBundle\Controller\APIBaseController;
 use Nelmio\ApiDocBundle\Annotation\ApiDoc;
@@ -68,12 +70,27 @@ class CharacterController extends APIBaseController
      *
      * @ApiDoc(
      *      section="Character",
-     *      description="NOT IMPLEMENTED"
+     *      description="Create a new Character",
+     *      parameters={
+     *          {"name"="name", "required"=true, "dataType"="string", "description"="Character name (must be unique on the platform)"},
+     *      }
      * )
      */
     public function postAction(Request $request)
     {
-        return $this->getServerErrorResponseBuilder()->notImplemented();
+        $character = new Character($this->getUser());
+        $form      = $this->createForm(new CharacterType(), $character, ['method' => 'POST']);
+
+        $form->handleRequest($request);
+        if (!$form->isValid()) {
+            return $this->getClientErrorResponseBuilder()->jsonResponseFormError($form);
+        }
+
+        $manager = $this->getDoctrine()->getManager();
+        $manager->persist($character);
+        $manager->flush();
+
+        return $this->getSuccessResponseBuilder()->postSuccess();
     }
 
     /**

@@ -1,0 +1,17 @@
+CuteNinja\HOT\CharacterBundle\Entity\Character:
+    constraints:
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [name]
+        - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity:
+            fields: [user]
+            message: "Only one Character per User is allowed"
+    properties:
+        name:
+            - NotBlank: ~
+            - Type: string
+            - Length:
+                min: 2
+                max: 30
+        user:
+            - NotNull: ~
+            - Type: CuteNinja\HOT\UserBundle\Entity\User
