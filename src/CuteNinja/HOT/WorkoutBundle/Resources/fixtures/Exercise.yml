@@ -5,57 +5,72 @@ CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
     rest (extends exercise):
         name: Rest
         difficulty: 0
+        type: rest
 
     squat (extends exercise):
         name: Squat
         difficulty: 1
+        type: repetition
 
     pistolSquat (extends exercise):
         name: Pistol Squat
         difficulty: 5
+        type: repetition
+
 
     pushUp (extends exercise):
         name: Push Up
         difficulty: 1
+        type: repetition
 
     sitUp (extends exercise):
         name: Sit Up
         difficulty: 1
+        type: repetition
 
     frontPlank (extends exercise):
         name: Front Plank
         difficulty: 1
+        type: hold
 
     sidePlank (extends exercise):
         name: Side Plank
         difficulty: 2
+        type: hold
 
     reversePlank (extends exercise):
         name: Reverse Squat
         difficulty: 3
+        type: hold
 
     superman (extends exercise):
         name: Superman
         difficulty: 3
+        type: hold
 
     burpee (extends exercise):
         name: Burpee
         difficulty: 4
+        type: repetition
 
     singleUnder (extends exercise):
         name: Single Under
         difficulty: 2
         equipments: [@jumpRope]
+        type: repetition
 
     doubleUnder (extends exercise):
         name: Double Under
         difficulty: 4
         equipments: [@jumpRope]
+        type: repetition
 
     run (extends exercise):
         name: Run
         difficulty: 0
+        type: repetition
 
     mountainClimber (extends exercise):
         name: Mountain Climber
         difficulty: 1
+        type: repetition

@@ -11,6 +11,12 @@ use CuteNinja\MemoriaBundle\Entity\BaseEntity;
  */
 abstract class AbstractWorkoutStep extends BaseEntity
 {
+    const TYPE_REST     = 'rest';
+    const TYPE_DISTANCE = 'distance';
+    const TYPE_DURATION = 'duration';
+    const TYPE_AMRAP    = 'amrap';
+    const TYPE_NOR      = 'nor';
+
     /**
      * @var integer $id
      */

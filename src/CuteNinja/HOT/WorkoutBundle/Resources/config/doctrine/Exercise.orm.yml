@@ -16,19 +16,24 @@ CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
 
     fields:
         name:
+            column: name
             type: string
-            scale: 0
             length: 25
             unique: true
             nullable: false
-            precision: 0
         difficulty:
+            column: difficulty
             type: integer
-            scale: 0
             length: null
             unique: false
             nullable: true
-            precision: 0
+        type:
+            column: type
+            type: string
+            columnDefinition: ENUM('rest', 'repetition', 'distance', 'hold')
+            length: 25
+            unique: false
+            nullable: false
 
     manyToMany:
         equipments:

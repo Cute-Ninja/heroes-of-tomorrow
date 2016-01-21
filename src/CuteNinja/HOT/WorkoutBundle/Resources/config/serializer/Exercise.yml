@@ -10,6 +10,9 @@ CuteNinja\HOT\WorkoutBundle\Entity\Exercise:
         difficulty:
             expose: true
             groups: [common]
+        type:
+            exopose: true
+            groups: [common]
         equipments:
             exopose: true
             groups: [equipment]
