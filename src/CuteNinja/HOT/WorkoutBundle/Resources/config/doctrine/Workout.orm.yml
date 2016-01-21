@@ -29,3 +29,16 @@ CuteNinja\HOT\WorkoutBundle\Entity\Workout:
             unique: false
             nullable: false
             precision: 0
+
+    oneToMany:
+        workoutSteps:
+            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkoutStep
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: workout
+            orderBy: { 'position': 'ASC' }
+            joinColumn:
+                name: workout_id
+                referencedColumnName: id
+                nullable: false
+            orphanRemoval: tru

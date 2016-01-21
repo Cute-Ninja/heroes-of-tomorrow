@@ -56,9 +56,11 @@ class WorkoutController extends APIBaseController
      */
     public function getAction(Request $request, $id)
     {
-        $workout = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout')->find($id);
+        /** @var WorkoutRepository $workoutRepository */
+        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout');
+        $workout           = $workoutRepository->getForGetAction($id);
 
-        $serializationContexts = ['common'];
+        $serializationContexts = ['common', 'workout-details'];
 
         return $this->getSuccessResponseBuilder()->buildSingleObjectResponse($workout, $serializationContexts);
     }

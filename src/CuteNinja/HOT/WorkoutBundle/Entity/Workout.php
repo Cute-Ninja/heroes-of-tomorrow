@@ -32,6 +32,11 @@ class Workout extends BaseEntity
     protected $difficulty = self::DEFAULT_DIFFICULTY;
 
     /**
+     * @var AbstractWorkoutStep[] $workoutSteps
+     */
+    protected $workoutSteps;
+
+    /**
      * @return int
      */
     public function getId()
@@ -87,6 +92,26 @@ class Workout extends BaseEntity
     public function setDifficulty($difficulty)
     {
         $this->difficulty = $difficulty;
+
+        return $this;
+    }
+
+    /**
+     * @return AbstractWorkoutStep
+     */
+    public function getWorkoutSteps()
+    {
+        return $this->workoutSteps;
+    }
+
+    /**
+     * @param AbstractWorkoutStep $workoutSteps
+     *
+     * @return $this
+     */
+    public function setWorkoutSteps($workoutSteps)
+    {
+        $this->workoutSteps = $workoutSteps;
 
         return $this;
     }

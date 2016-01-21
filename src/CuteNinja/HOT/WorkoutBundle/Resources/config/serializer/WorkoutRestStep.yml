@@ -1,18 +1,15 @@
-CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutRestStep:
     exclusion_policy: ALL
     properties:
         id:
             expose: true
             groups: [common]
-
-        name:
+        exercise:
             expose: true
             groups: [common]
-
-        difficulty:
+        duration:
             expose: true
             groups: [common]
-
-        workoutSteps:
+        position:
             expose: true
-            groups: [workout-details]
+            groups: [common]

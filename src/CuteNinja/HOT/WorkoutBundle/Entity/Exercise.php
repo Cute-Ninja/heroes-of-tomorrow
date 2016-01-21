@@ -11,6 +11,11 @@ use CuteNinja\MemoriaBundle\Entity\BaseEntity;
  */
 class Exercise extends BaseEntity
 {
+    const TYPE_REST     = 'rest';
+    const TYPE_AMRAP    = 'amrap'; // As Many Repetition As Possible
+    const TYPE_NOR      = 'number'; // Number of Repetition
+    const TYPE_DISTANCE = 'distance';
+
     const DEFAULT_DIFFICULTY = 0;
 
     /**

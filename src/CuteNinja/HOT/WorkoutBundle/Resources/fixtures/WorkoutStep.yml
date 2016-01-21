@@ -1,0 +1,123 @@
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutRestStep:
+    workoutRestStep (template):
+        status: active
+
+    thorWorkoutStep4:
+        workout: @thor
+        exercise: @rest
+        duration: 30
+        position: 4
+
+    thorWorkoutStep8:
+        workout: @thor
+        exercise: @rest
+        duration: 30
+        position: 8
+
+    fafnirWorkoutStep2:
+        workout: @fafnir
+        exercise: @rest
+        duration: 30
+        position: 2
+
+    fafnirWorkoutStep4:
+        workout: @fafnir
+        exercise: @rest
+        duration: 30
+        position: 4
+
+    fafnirWorkoutStep6:
+        workout: @fafnir
+        exercise: @rest
+        duration: 30
+        position: 6
+
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutNorStep:
+    workoutNorStep (template):
+        status: active
+
+    thorWorkoutStep1:
+        workout: @thor
+        exercise: @squat
+        numberOfRepetition: 50
+        position: 1
+
+    thorWorkoutStep2:
+        workout: @thor
+        exercise: @sitUp
+        numberOfRepetition: 30
+        position: 2
+
+    thorWorkoutStep3:
+        workout: @thor
+        exercise: @pushUp
+        numberOfRepetition: 15
+        position: 3
+
+    thorWorkoutStep5:
+        workout: @thor
+        exercise: @squat
+        numberOfRepetition: 50
+        position: 5
+
+    thorWorkoutStep6:
+        workout: @thor
+        exercise: @sitUp
+        numberOfRepetition: 30
+        position: 6
+
+    thorWorkoutStep7:
+        workout: @thor
+        exercise: @pushUp
+        numberOfRepetition: 15
+        position: 7
+
+    thorWorkoutStep9:
+        workout: @thor
+        exercise: @squat
+        numberOfRepetition: 50
+        position: 9
+
+    thorWorkoutStep10:
+        workout: @thor
+        exercise: @sitUp
+        numberOfRepetition: 30
+        position: 10
+
+    thorWorkoutStep11:
+        workout: @thor
+        exercise: @pushUp
+        numberOfRepetition: 15
+        position: 11
+
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutDistanceStep:
+    sleipnirWorkoutStep1:
+        workout: @sleipnir
+        exercise: @run
+        distance: 10000
+        position: 1
+
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutAmrapStep:
+    fafnirWorkoutStep1:
+        workout: @fafnir
+        exercise: @burpee
+        duration: 60
+        position: 1
+
+    fafnirWorkoutStep3:
+        workout: @fafnir
+        exercise: @mountainClimber
+        duration: 60
+        position: 3
+
+    fafnirWorkoutStep5:
+        workout: @fafnir
+        exercise: @burpee
+        duration: 60
+        position: 5
+
+    fafnirWorkoutStep7:
+        workout: @fafnir
+        exercise: @mountainClimber
+        duration: 60
+        position: 7

@@ -1,0 +1,54 @@
+CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkoutStep:
+    type: entity
+    table: "`workout_step`"
+    inheritanceType: SINGLE_TABLE
+    repositoryClass: CuteNinja\HOT\WorkoutBundle\Repository\WorkoutStepRepository
+    discriminatorColumn:
+        name: type
+        type: string
+    discriminatorMap:
+        amrap: CuteNinja\HOT\WorkoutBundle\Entity\WorkoutAmrapStep
+        distance: CuteNinja\HOT\WorkoutBundle\Entity\WorkoutDistanceStep
+        nor: CuteNinja\HOT\WorkoutBundle\Entity\WorkoutNorStep
+        rest: CuteNinja\HOT\WorkoutBundle\Entity\WorkoutRestStep
+
+    id:
+        id:
+            type: integer
+            length: null
+            unique: true
+            nullable: false
+            id: true
+            generator:
+                strategy: IDENTITY
+
+    fields:
+        position:
+            column: position
+            type: integer
+            nullable: false
+            unique: false
+
+    manyToOne:
+        workout:
+            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\Workout
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumn:
+                name: workout_id
+                referencedColumnName: id
+                nullable: false
+            orphanRemoval: true
+        exercise:
+            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\Exercise
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumn:
+                name: exercise_id
+                referencedColumnName: id
+                nullable: false
+            orphanRemoval: true

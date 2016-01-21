@@ -1,0 +1,8 @@
+CuteNinja\HOT\WorkoutBundle\Entity\WorkoutNorStep:
+    type: entity
+    fields:
+        numberOfRepetition:
+            column: number_of_repetition
+            type: integer
+            nullable: false
+            unique: false

@@ -6,3 +6,4 @@ cute_ninja_memoria:
         - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Equipment.yml }
         - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Exercise.yml }
         - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/Workout.yml }
+        - { resource: src/CuteNinja/HOT/WorkoutBundle/Resources/fixtures/WorkoutStep.yml }
