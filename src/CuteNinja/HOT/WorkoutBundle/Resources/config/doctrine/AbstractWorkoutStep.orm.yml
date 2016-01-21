@@ -31,7 +31,7 @@ CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkoutStep:
 
     manyToOne:
         workout:
-            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\Workout
+            targetEntity: CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkout
             cascade: {  }
             fetch: LAZY
             mappedBy: null

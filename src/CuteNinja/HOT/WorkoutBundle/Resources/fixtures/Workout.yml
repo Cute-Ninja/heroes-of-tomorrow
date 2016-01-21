@@ -1,4 +1,4 @@
-CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+CuteNinja\HOT\WorkoutBundle\Entity\HotWorkout:
     workout (template):
         status: active
 
@@ -28,4 +28,20 @@ CuteNinja\HOT\WorkoutBundle\Entity\Workout:
 
     fafnir (extends workout):
         name: Fafnir
+        difficulty: 1
+
+CuteNinja\HOT\WorkoutBundle\Entity\CommunityWorkout:
+    workout (template):
+        status: active
+
+    ghriimWorkout1:
+        name: Half marathon preparation (1)
+        owner: @ghriim
+        isPublic: true
+        difficulty: 1
+
+    ghriimWorkout2:
+        name: Half marathon preparation (2)
+        owner: @ghriim
+        isPublic: false
         difficulty: 1

@@ -2,7 +2,8 @@
 
 namespace CuteNinja\HOT\WorkoutBundle\Repository;
 
-use CuteNinja\HOT\WorkoutBundle\Entity\Workout;
+use CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkout;
+use CuteNinja\HOT\WorkoutBundle\Entity\HotWorkout;
 use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Doctrine\ORM\QueryBuilder;
@@ -26,11 +27,16 @@ class WorkoutRepository extends EntityRepository
     }
 
     /**
+     * @param integer $userId
+     *
      * @return QueryBuilder
      */
-    public function getForListActionQueryBuilder()
+    public function getForListActionQueryBuilder($userId)
     {
         $queryBuilder = $this->getQueryBuilder();
+
+        $queryBuilder->where('workout INSTANCE OF :workoutType');
+        $queryBuilder->setParameter('workoutType', AbstractWorkout::TYPE_HOT);
 
         return $queryBuilder;
     }
@@ -38,7 +44,7 @@ class WorkoutRepository extends EntityRepository
     /**
      * @param integer $id
      *
-     * @return Workout|null
+     * @return AbstractWorkout|null
      *
      * @throws NonUniqueResultException
      */

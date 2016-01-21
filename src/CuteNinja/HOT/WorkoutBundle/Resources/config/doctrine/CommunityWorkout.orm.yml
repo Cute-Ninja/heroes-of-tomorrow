@@ -1,0 +1,27 @@
+CuteNinja\HOT\WorkoutBundle\Entity\CommunityWorkout:
+    type: entity
+    fields:
+        rating:
+            column: rating
+            type: decimal
+            unique: false
+            scale: 2
+            nullable: true
+
+        isPublic:
+            column: is_public
+            type: boolean
+            unique: false
+            nullable: false
+
+    manyToOne:
+        owner:
+            targetEntity: CuteNinja\HOT\UserBundle\Entity\User
+            cascade: { }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinsColumn:
+                name: user_id
+                referencedColumnName: id
+                nullable: false

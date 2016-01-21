@@ -28,7 +28,7 @@ abstract class AbstractWorkoutStep extends BaseEntity
     protected $position;
 
     /**
-     * @var Workout $workout
+     * @var AbstractWorkout $workout
      */
     protected $workout;
 
@@ -83,7 +83,7 @@ abstract class AbstractWorkoutStep extends BaseEntity
     }
 
     /**
-     * @return Workout
+     * @return AbstractWorkout
      */
     public function getWorkout()
     {
@@ -91,7 +91,7 @@ abstract class AbstractWorkoutStep extends BaseEntity
     }
 
     /**
-     * @param Workout $workout
+     * @param AbstractWorkout $workout
      *
      * @return $this
      */

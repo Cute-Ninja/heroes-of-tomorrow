@@ -25,10 +25,10 @@ class WorkoutController extends APIBaseController
     public function listAction(Request $request)
     {
         /** @var WorkoutRepository $workoutRepository */
-        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout');
+        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:AbstractWorkout');
 
         $serializationContexts = ['common'];
-        $query                 = $workoutRepository->getForListActionQueryBuilder();
+        $query                 = $workoutRepository->getForListActionQueryBuilder($this->getUser()->getId());
 
         $page  = $this->getPageForPagination($request);
         $limit = $this->getLimitForPagination($request);
@@ -57,7 +57,7 @@ class WorkoutController extends APIBaseController
     public function getAction(Request $request, $id)
     {
         /** @var WorkoutRepository $workoutRepository */
-        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:Workout');
+        $workoutRepository = $this->getDoctrine()->getRepository('CuteNinjaHOTWorkoutBundle:AbstractWorkout');
         $workout           = $workoutRepository->getForGetAction($id);
 
         $serializationContexts = ['common', 'workout-details'];

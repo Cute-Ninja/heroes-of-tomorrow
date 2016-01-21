@@ -5,15 +5,15 @@ namespace CuteNinja\HOT\WorkoutBundle\Entity;
 use CuteNinja\MemoriaBundle\Entity\BaseEntity;
 
 /**
- * Class Workout
+ * Class AbstractWorkout
  *
  * @package CuteNinja\HOT\WorkoutBundle\Entity
  */
-class Workout extends BaseEntity
+abstract class AbstractWorkout extends BaseEntity
 {
-    /**
-     * @var integer
-     */
+    const TYPE_HOT = 'hot';
+    const TYPE_COMMUNITY = 'community';
+
     const DEFAULT_DIFFICULTY = 0;
 
     /**
@@ -35,6 +35,11 @@ class Workout extends BaseEntity
      * @var AbstractWorkoutStep[] $workoutSteps
      */
     protected $workoutSteps;
+
+    /**
+     * @return string
+     */
+    abstract public function getType();
 
     /**
      * @return int

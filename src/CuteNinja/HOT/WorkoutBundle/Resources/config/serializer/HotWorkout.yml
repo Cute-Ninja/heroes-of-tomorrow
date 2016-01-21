@@ -1,4 +1,4 @@
-CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+CuteNinja\HOT\WorkoutBundle\Entity\HotWorkout:
     exclusion_policy: ALL
     properties:
         id:

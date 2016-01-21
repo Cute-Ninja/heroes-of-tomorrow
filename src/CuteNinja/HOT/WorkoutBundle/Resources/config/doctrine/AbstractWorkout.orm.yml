@@ -1,7 +1,15 @@
-CuteNinja\HOT\WorkoutBundle\Entity\Workout:
+CuteNinja\HOT\WorkoutBundle\Entity\AbstractWorkout:
     type: entity
     table: "`workout`"
+    inheritanceType: SINGLE_TABLE
     repositoryClass: CuteNinja\HOT\WorkoutBundle\Repository\WorkoutRepository
+    discriminatorColumn:
+        name: type
+        type: string
+    discriminatorMap:
+        hot: CuteNinja\HOT\WorkoutBundle\Entity\HotWorkout
+        community: CuteNinja\HOT\WorkoutBundle\Entity\CommunityWorkout
+
     id:
         id:
             type: integer
